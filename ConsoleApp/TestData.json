@@ -1,5 +1,6 @@
 {
   "stringData": "Example",
+  "japaneseString": "サンプル",
   "numericData": 99.99,
   "orderFirstNumericData": -99.77,
   "orderLastNumericData": 12345.67,

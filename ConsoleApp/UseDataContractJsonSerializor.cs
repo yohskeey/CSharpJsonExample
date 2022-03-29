@@ -41,8 +41,11 @@ namespace ConsoleApp
             [DataMember(Name = "stringData", Order = 1)]
             public string? StringData { get; set; }
 
-            [DataMember(Name = "numericData", Order = 2)]
-            public decimal? NumricData { get; set; }
+            [DataMember(Name = "japaneseString", Order = 2)]
+            public string? JapaneseString { get; set; }
+
+            [DataMember(Name = "numericData", Order = 3)]
+            public decimal? NumericData { get; set; }
 
             [DataMember(Name = "orderFirstNumericData", Order = 0)]
             public decimal? OrderFirstNumericData { get; set; }
@@ -50,10 +53,10 @@ namespace ConsoleApp
             [DataMember(Name = "orderLastNumericData", Order = 99)]
             public decimal? OrderLastNumericData { get; set; }
 
-            [DataMember(Name = "numericArray", Order = 3)]
+            [DataMember(Name = "numericArray", Order = 4)]
             public List<decimal>? NumericArray { get; set; }
 
-            [DataMember(Name = "stringArray", Order = 4)]
+            [DataMember(Name = "stringArray", Order = 5)]
             public List<string>? StringArray { get; set; }
         }
     }

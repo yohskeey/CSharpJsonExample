@@ -15,8 +15,9 @@ namespace ConsoleApp
         public record class JsonData : IJsonData
         {
             public string? StringData { get; set; }
+            public string? JapaneseString { get; set; }
 
-            public decimal? NumricData { get; set; }
+            public decimal? NumericData { get; set; }
 
             [JsonProperty(Order = -2)]
             public decimal? OrderFirstNumericData { get; set; }

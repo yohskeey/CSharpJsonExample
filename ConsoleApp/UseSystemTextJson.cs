@@ -1,7 +1,9 @@
 ﻿using ConsoleApp.Interfaces;
 
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Unicode;
 
 namespace ConsoleApp
 {
@@ -9,7 +11,11 @@ namespace ConsoleApp
     {
         readonly JsonSerializerOptions _serializeOptions = new()
         {
+            // プロパティ名をキャメルケースにする
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            // すべての言語セットをエスケープせずにシリアル化させる
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+            // 成型する
             WriteIndented = true
         };
 
@@ -20,8 +26,9 @@ namespace ConsoleApp
         public record class JsonData : IJsonData
         {
             public string? StringData { get; set; }
+            public string? JapaneseString { get; set; }
 
-            public decimal? NumricData { get; set; }
+            public decimal? NumericData { get; set; }
 
             /////////////////////////////////////////////////
             ////// JsonPropertyOrder が何故か無視される？？？？？
